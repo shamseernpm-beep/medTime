@@ -11,3 +11,7 @@ class AppColor {
     end: Alignment.bottomCenter,
   );
 }
+
+class Black {
+  static const Color black = Colors.black;
+}
