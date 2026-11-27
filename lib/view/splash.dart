@@ -12,16 +12,16 @@ class Splash extends StatefulWidget {
 }
 
 class _SplashState extends State<Splash> {
-  // @override
-  // initState() {
-  //   super.initState();
-  //   Timer(Duration(seconds: 3), () {
-  //     Navigator.pushReplacement(
-  //       context,
-  //       MaterialPageRoute(builder: (context) => Login()),
-  //     );
-  //   });
-  // }
+  @override
+  initState() {
+    super.initState();
+    Timer(Duration(seconds: 3), () {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => Login()),
+      );
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
