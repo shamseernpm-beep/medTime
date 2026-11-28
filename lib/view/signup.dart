@@ -190,7 +190,7 @@ class _SignupState extends State<Signup> {
                             return "Please confirm your password";
                           }
                           if (value != passwordController.text) {
-                            return "Passwords do not match ";
+                            return "Passwords do not match";
                           }
                           return null;
                         },
