@@ -17,6 +17,9 @@ class _SignupState extends State<Signup> {
 
   final formKey = GlobalKey<FormState>();
 
+  bool isPasswordVisible = false;
+  bool isConfirmPasswordVisible = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -111,12 +114,24 @@ class _SignupState extends State<Signup> {
                       // Password
                       TextFormField(
                         controller: passwordController,
-                        obscureText: true,
+                        obscureText: !isPasswordVisible,
                         decoration: InputDecoration(
                           filled: true,
                           fillColor: Color.fromARGB(255, 214, 226, 215),
                           hintText: "Password",
                           prefixIcon: Icon(Icons.lock_outline),
+                          suffixIcon: IconButton(
+                            icon: Icon(
+                              isPasswordVisible
+                                  ? Icons.visibility
+                                  : Icons.visibility_off,
+                            ),
+                            onPressed: () {
+                              setState(() {
+                                isPasswordVisible = !isPasswordVisible;
+                              });
+                            },
+                          ),
                           contentPadding: EdgeInsets.symmetric(
                             vertical: 20,
                             horizontal: 10,
@@ -142,12 +157,25 @@ class _SignupState extends State<Signup> {
                       // Confirm Password
                       TextFormField(
                         controller: confirmPasswordController,
-                        obscureText: true,
+                        obscureText: !isConfirmPasswordVisible,
                         decoration: InputDecoration(
                           filled: true,
                           fillColor: Color.fromARGB(255, 214, 226, 215),
                           hintText: "Confirm Password",
                           prefixIcon: Icon(Icons.lock_outline),
+                          suffixIcon: IconButton(
+                            icon: Icon(
+                              isConfirmPasswordVisible
+                                  ? Icons.visibility
+                                  : Icons.visibility_off,
+                            ),
+                            onPressed: () {
+                              setState(() {
+                                isConfirmPasswordVisible =
+                                    !isConfirmPasswordVisible;
+                              });
+                            },
+                          ),
                           contentPadding: EdgeInsets.symmetric(
                             vertical: 20,
                             horizontal: 10,
