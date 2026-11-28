@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:med_time/color/color.dart';
+import 'package:med_time/view/signup.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -213,7 +214,10 @@ class _LoginState extends State<Login> {
 
                         TextButton(
                           onPressed: () {
-                            // Navigate to Sign Up page
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => Signup()),
+                            );
                           },
                           child: Text(
                             "Sign Up",
